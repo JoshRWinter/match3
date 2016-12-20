@@ -1,7 +1,7 @@
 apk=match3-debug.apk
 
 all:../assets/assets ../assets/aassets
-	ndk-build -C ..
+	NDK_DEBUG=1 ndk-build -C ..
 	ant debug -f ../build.xml
 	adb install -r $(CURDIR)/../bin/$(apk)
 	

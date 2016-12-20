@@ -87,7 +87,9 @@ void cmdproc(struct android_app *app,int32_t cmd){
 	struct state *state=app->userData;
 	switch(cmd){
 		case APP_CMD_START:
-			//hidenavbars(&state->jni_info);
+			usleep(300000); // escape a race condition bug in android 6.0.0
+		case APP_CMD_RESUME:
+			hidenavbars(&state->jni_info);
 			logcat("poop");
 			break;
 		case APP_CMD_INIT_WINDOW:
