@@ -13,9 +13,9 @@ const char *vertexshader=
 "else ftexcoord=vec2(texcoords[1],texcoords[2]);\n"
 "}"
 ,*fragmentshader=
-"uniform vec4 rgba;\n"
+"uniform lowp vec4 rgba;\n"
 "uniform sampler2D tex;\n"
-"varying vec2 ftexcoord;\n"
+"varying lowp vec2 ftexcoord;\n"
 "void main(){\n"
 "gl_FragColor=texture2D(tex,ftexcoord)*rgba;\n"
 "}"
